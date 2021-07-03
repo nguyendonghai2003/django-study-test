@@ -1,0 +1,16 @@
+{% extends "Production/index.html" %}
+
+    {% block base_block %}
+    <h1> Detail of machine number {{machine}}</h1>
+    
+
+    {{machine.machine_code}}
+    <hr>
+    {{machine.machine_name}}
+    <hr>
+    {{machine.location}}
+    <hr>
+    {{machine.clamping_force}}
+    
+    {% endblock base_block %}
+
