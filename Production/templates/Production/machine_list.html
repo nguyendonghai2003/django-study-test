@@ -1,0 +1,40 @@
+{% extends "Production/index.html" %}
+
+    {% block base_block %}
+    <h1> All Machine in The Factory</h1>
+    
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr class = "table-primary">
+          <th scope="col">Key Hệ Thống</th>
+          <th scope="col">Mã Máy</th>
+          <th scope="col">Tên Máy</th>
+          <th scope="col">Số tấn</th>
+          <th scope="col">Khác</th>
+        </tr>
+      </thead>
+      {% if machine_list %}
+    
+        {% for machine in machine_list  %}
+        
+        <tbody>
+          <tr>
+            <th scope="row">{{ machine.pk}}</th>
+            <td><a class = "nav-link active" href="{%url 'machine_detail' machine.id %}">{{ machine}}</a></td>
+            <td>{{ machine.machine_name}}</td>
+            <td>{{ machine.clamping_force}}</td>
+            <td>testing</td>
+          </tr>
+        </tbody>
+            
+        {% endfor %}
+
+      {% else %}
+        <p>Nothing to show here</p>
+      {% endif %}
+    </table>
+
+
+
+    {% endblock base_block %}
+
